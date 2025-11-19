@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { neon } from "@neondatabase/serverless"
+// import { neon } from "@neondatabase/serverless"
 
-const sql = neon("")
+const sql = ""
 
 export async function GET(request: NextRequest) {
   try {
