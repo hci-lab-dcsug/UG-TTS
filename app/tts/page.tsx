@@ -25,6 +25,8 @@ interface TTSModelInfo {
   model_type: ModelType
   description: string
   available_speakers: (string | number)[]
+  display_name?: string
+
 }
 
 function coerceToString(v: unknown): string {
@@ -220,7 +222,7 @@ export default function TTSPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="akan-twi">Akan-Twi</SelectItem>
-                    <SelectItem value="ewe">Ewe</SelectItem>
+                    <SelectItem value="ewe">Efo Kwadwo</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
