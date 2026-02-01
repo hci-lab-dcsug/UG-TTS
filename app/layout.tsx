@@ -9,7 +9,8 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "DCS-HCI NLP",
   description: "Text-to-Speech Interface and Evaluation System",
-    generator: 'v0.dev'
+  generator: "v0.dev",
+  metadataBase: new URL("https://nlp-client-newtts.vercel.app"),
 }
 
 export default function RootLayout({

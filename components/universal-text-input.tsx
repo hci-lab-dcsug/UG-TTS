@@ -10,7 +10,6 @@ import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { CheckCircle, AlertCircle, Loader2, X } from "lucide-react"
 import AkanKeyboard from "./akan-keyboard"
-import { useTheme } from "next-themes"
 
 const DEFAULT_SC_API = "/api/spellcheck"
 const DEFAULT_SC_MODEL = "akan-twi"
@@ -91,11 +90,6 @@ const UniversalTextInput = forwardRef<UniversalTextInputRef, UniversalTextInputP
     const [isKeyboardActive, setIsKeyboardActive] = useState(false)
     const spellCheckTimeoutRef = useRef<NodeJS.Timeout | null>(null)
     const [inputStyles, setInputStyles] = useState<CSSStyleDeclaration | null>(null)
-    const { theme, systemTheme } = useTheme()
-
-    const currentTheme = theme === "system" ? systemTheme : theme
-    const isDarkMode = currentTheme === "dark"
-
     const modelForSpellcheck = spellcheckModelName || DEFAULT_SC_MODEL
 
     useImperativeHandle(ref, () => ({
@@ -456,8 +450,6 @@ const UniversalTextInput = forwardRef<UniversalTextInputRef, UniversalTextInputP
       name,
       style: {
         backgroundColor: "transparent",
-        color: isDarkMode ? "white" : "black",
-        caretColor: isDarkMode ? "white" : "black",
         resize: type === "textarea" ? "vertical" : "none",
       } as React.CSSProperties,
     }
